@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Accordion">
+        <attr name="title" format="reference|string" />
+        <attr name="text" format="reference|string" />
+
+        <attr name="titleColor" format="reference|color" />
+        <attr name="textColor" format="reference|color" />
+
+        <attr name="titleSize" format="reference|dimension"/>
+        <attr name="textSize" format="reference|dimension"/>
+    </declare-styleable>
+</resources>

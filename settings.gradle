@@ -1,0 +1,3 @@
+include ':accolib'
+include ':app'
+rootProject.name = "AccoLib"

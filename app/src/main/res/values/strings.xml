@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">AccoLib</string>
+
+    <string name="small_title">Small Title</string>
+    <string name="small_text">
+        This is some small text to prove that the accordion works…
+    </string>
+    <string name="big_title">Big title with really randomised text idk why</string>
+    <string name="big_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec viverra posuere interdum. Aliquam condimentum ullamcorper orci,
+        eu ornare elit luctus eget. Praesent auctor eros et laoreet pharetra.
+        Nunc non tellus a lorem volutpat eleifend ac a urna. Proin pretium vehicula
+        nisl, nec laoreet enim bibendum vitae. In sodales et lectus commodo rhoncus.
+        Nunc finibus turpis vitae magna porttitor gravida. Nam sagittis elit nec
+        lorem feugiat, eleifend condimentum est convallis. Nam laoreet porttitor feugiat.
+        Maecenas cursus congue nunc, commodo commodo lorem luctus nec. Nulla vulputate
+        mollis molestie. Etiam ullamcorper, elit imperdiet iaculis ultrices, erat lorem
+        imperdiet nisl, at dictum eros mauris vel ipsum.
+    </string>
+</resources>
