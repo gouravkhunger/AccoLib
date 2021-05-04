@@ -4,7 +4,7 @@
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 [![](https://jitpack.io/v/GouravKhunger/AccoLib.svg)](https://jitpack.io/#GouravKhunger/Accolib)
 
-<img alt = "AccoLib Logo" src="https://github.com/GouravKhunger/TextRecognizer/blob/master/art/logo.png?raw=true" height="150px" width="150px" align="right"/>
+<img alt = "AccoLib Logo" src="https://raw.githubusercontent.com/GouravKhunger/AccoLib/main/art/logo.png" height="150px" width="150px" align="right"/>
 
 An easy-to-use, amazing Accordion Library for Android built with kotlin.
 
