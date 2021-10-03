@@ -149,14 +149,14 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
 
             textHolder.visibility = if(opened) View.GONE else View.VISIBLE
             turn(icon)
-            if(!opened)  textHolder.animate()
-                .alphaBy(1f)
-                .translationY(0f)
-                .start()
-            else textHolder.animate()
-                .alpha(0f)
-                .translationY(-this.height.toFloat())
-                .start()
+//            if(!opened)  textHolder.animate()
+//                .alphaBy(1f)
+//                .translationY(0f)
+//                .start()
+//            else textHolder.animate()
+//                .alpha(0f)
+//                .translationY(-this.height.toFloat())
+//                .start()
             opened = !opened
             isClicked = false
 
