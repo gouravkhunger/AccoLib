@@ -24,10 +24,13 @@
 
 package com.gouravkhunger.accolib.widget
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.content.Context
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
+import android.view.animation.Animation
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -146,6 +149,14 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
 
             textHolder.visibility = if(opened) View.GONE else View.VISIBLE
             turn(icon)
+//            if(!opened)  textHolder.animate()
+//                .alphaBy(1f)
+//                .translationY(0f)
+//                .start()
+//            else textHolder.animate()
+//                .alpha(0f)
+//                .translationY(-this.height.toFloat())
+//                .start()
             opened = !opened
             isClicked = false
 
