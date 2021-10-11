@@ -24,13 +24,10 @@
 
 package com.gouravkhunger.accolib.widget
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.content.Context
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
-import android.view.animation.Animation
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -42,7 +39,7 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
     LinearLayout(context, attributeSet) {
 
     // variables
-    private var opened = false
+    private var isOpen = false
     private var isClicked = false
 
     // UI elements
@@ -108,7 +105,6 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         // inflate the default accordion layout
         inflate(context, R.layout.layout_default, this)
 
-        //val card = findViewById<CardView>(R.id.accordion_card)
         titleTv = findViewById(R.id.title)
         textTv = findViewById(R.id.text)
         icon = findViewById(R.id.arrow)
@@ -136,7 +132,6 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         titleHolder.setOnClickListener {
             handleAccordion()
         }
-
     }
 
     // open/close the accordion on title press
@@ -146,61 +141,19 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         // -> prevents messing up with multiple clicks before
         // animation ends
         if (!isClicked) {
+            isClicked = true
 
-            textHolder.visibility = if(opened) View.GONE else View.VISIBLE
+            textHolder.visibility = if (isOpen) View.GONE else View.VISIBLE
             turn(icon)
-//            if(!opened)  textHolder.animate()
-//                .alphaBy(1f)
-//                .translationY(0f)
-//                .start()
-//            else textHolder.animate()
-//                .alpha(0f)
-//                .translationY(-this.height.toFloat())
-//                .start()
-            opened = !opened
+
+            isOpen = !isOpen
             isClicked = false
-
-            //TODO: open the Accordion with a nice animation
-
-            // NOTE: this does not work perfectly yet!!
-            /*// start work on the text of the accordion
-            textHolder.apply {
-
-                // if the text is already visible start animation from
-                // 100% opacity to 0 %
-                // if it is gone, make is visible for smoother transition
-                alpha = if (opened) 1f else 0f
-                if (visibility == View.GONE) visibility = View.VISIBLE
-
-                // flip the down arrow
-                turn(icon)
-
-                // start animating
-                animate()
-                    .alpha(
-                        // if it is already opened, closed it
-                        // else open it
-                        if (opened) 0f
-                        else 1f
-                    )
-                    .setDuration(300) // 300 millisecond
-                    .setListener(object : AnimatorListenerAdapter() {
-                        override fun onAnimationEnd(animation: Animator) {
-                            // turn the visibility as the condition requires
-                            // and change the control variables
-                            visibility = if (opened) View.GONE else View.VISIBLE
-                            opened = !opened
-                            isClicked = false
-                        }
-                    })
-            }*/
         }
     }
 
     // flips any view upside down/downside up
     private fun turn(view: View) {
-        if (!opened) view.animate().rotation(180f).start()
+        if (!isOpen) view.animate().rotation(180f).start()
         else view.animate().rotation(0f).start()
     }
-
 }
