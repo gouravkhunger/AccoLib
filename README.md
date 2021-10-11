@@ -14,6 +14,8 @@ than what was needed before ✨
 ## Demo
 ![Image of Preview](./art/demo.gif)
 
+(Animation has improved since `v1.1.0`)
+
 ## Requirements
 - Android `minSDKVersion` 21
 
