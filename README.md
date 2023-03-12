@@ -2,9 +2,9 @@
 
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)]()
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
-[![](https://jitpack.io/v/GouravKhunger/AccoLib.svg)](https://jitpack.io/#GouravKhunger/Accolib)
+[![](https://jitpack.io/v/gouravkhunger/AccoLib.svg)](https://jitpack.io/#gouravkhunger/Accolib)
 
-<img alt = "AccoLib Logo" src="https://raw.githubusercontent.com/GouravKhunger/AccoLib/main/art/logo.png" height="150px" width="150px" align="right"/>
+<img alt = "AccoLib Logo" src="https://raw.githubusercontent.com/gouravkhunger/AccoLib/main/art/logo.png" height="150px" width="150px" align="right"/>
 
 An easy-to-use, amazing Accordion Library for Android built with kotlin.
 
@@ -13,8 +13,6 @@ than what was needed before ✨
 
 ## Demo
 ![Image of Preview](./art/demo.gif)
-
-(Animation has improved since `v1.1.0`)
 
 ## Requirements
 - Android `minSDKVersion` 21
@@ -33,7 +31,7 @@ allprojects {
 Add the dependency
 ```Groovy
 dependencies {
-    implementation 'com.github.GouravKhunger:AccoLib:1.1.1'
+    implementation 'com.github.gouravkhunger:AccoLib:1.1.1'
 }
 ```
 
