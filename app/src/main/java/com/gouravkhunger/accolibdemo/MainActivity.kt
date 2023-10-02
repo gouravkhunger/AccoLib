@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Dynamic initialization
-        val textView: Accordion = findViewById(R.id.abc)
-        textView.title = "Dynamic"
-        textView.text = "This text is rendered dynamically."
+        val accordion: Accordion = findViewById(R.id.dynamic_accordion)
+        accordion.title = "Dynamic"
+        accordion.text = "This text is rendered dynamically."
     }
 }
