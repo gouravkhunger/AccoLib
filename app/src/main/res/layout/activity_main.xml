@@ -37,7 +37,7 @@
 
         <!-- Small text Accordion -->
         <com.gouravkhunger.accolib.widget.Accordion
-            android:id="@+id/accordion"
+            android:id="@+id/small_accordion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,17 +52,28 @@
 
         <!-- Big text Accordion -->
         <com.gouravkhunger.accolib.widget.Accordion
+            android:id="@+id/big_accordion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/accordion"
+            app:layout_constraintTop_toBottomOf="@+id/small_accordion"
             app:title="@string/big_title"
             app:text="@string/big_text"
             app:titleSize="18sp"
             app:textSize="16sp"
             app:titleColor="@android:color/black"
             app:textColor="@android:color/darker_gray" />
+
+        <com.gouravkhunger.accolib.widget.Accordion
+            android:id="@+id/dynamic_accordion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:titleSize="18sp"
+            app:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/big_accordion" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
