@@ -26,6 +26,7 @@ package com.gouravkhunger.accolib.widget
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.widget.ImageView
@@ -50,27 +51,34 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
     private val textHolder: CardView
 
     // title and text to be displayed in the accordion
-    private var title = ""
-        set(value) {
-            field = value
-            invalidate()
+    private var _title = ""
+    private var _text = ""
+
+    var title = ""
+        get() {
+            return _title
         }
-    private var text = ""
         set(value) {
             field = value
-            invalidate()
+            titleTv.text = value
+        }
+    var text = ""
+        get() {
+            return _text
+        }
+        set(value) {
+            field = value
+            textTv.text = value
         }
 
     // colors for title and text
     private var titleColor = 0XFF000000.toInt()
         set(@ColorInt colorInt) {
             field = colorInt
-            invalidate()
         }
     private var textColor = 0XFF111111.toInt()
         set(@ColorInt colorInt) {
             field = colorInt
-            invalidate()
         }
 
     // size of title and text
@@ -90,8 +98,8 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         // get values from custom parameters passed in xml declaration of view
         val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.Accordion, 0, 0)
 
-        title = typedArray.getString(R.styleable.Accordion_title) ?: title
-        text = typedArray.getString(R.styleable.Accordion_text) ?: text
+        _title = typedArray.getString(R.styleable.Accordion_title) ?: _title
+        _text = typedArray.getString(R.styleable.Accordion_text) ?: _text
 
         titleSize = typedArray.getDimension(R.styleable.Accordion_titleSize, titleSize)
         textSize = typedArray.getDimension(R.styleable.Accordion_textSize, textSize)

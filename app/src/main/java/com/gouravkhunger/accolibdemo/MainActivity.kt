@@ -26,10 +26,16 @@ package com.gouravkhunger.accolibdemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.gouravkhunger.accolib.widget.Accordion
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Dynamic initialization
+        val textView: Accordion = findViewById(R.id.abc)
+        textView.title = "Dynamic"
+        textView.text = "This text is rendered dynamically."
     }
 }
