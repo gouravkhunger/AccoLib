@@ -41,5 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         accordion.titleColor = ContextCompat.getColor(this, android.R.color.holo_orange_dark)
         accordion.textColor = ContextCompat.getColor(this, android.R.color.holo_blue_dark)
+
+        accordion.titleSize = 24.toFloat()
+        accordion.textSize = 14.toFloat()
     }
 }

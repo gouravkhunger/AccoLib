@@ -52,8 +52,10 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
     // accordion properties
     private var _title = ""
     private var _text = ""
-    private var _titleColor = 0XFF000000.toInt()
+    private var _textSize = 18.toFloat()
+    private var _titleSize = 22.toFloat()
     private var _textColor = 0XFFaaaaaa.toInt()
+    private var _titleColor = 0XFF000000.toInt()
 
     var title = _title
         get() {
@@ -97,16 +99,24 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         }
 
     // size of title and text
-    private var titleSize = 10f
+    var titleSize = _titleSize
+        get() {
+            return _titleSize
+        }
         set(value) {
             field = value
-            invalidate()
+            _titleSize = value
+            titleTv.textSize = value
         }
 
-    private var textSize = 10f
+    var textSize = _textSize
+        get() {
+            return _textSize
+        }
         set(value) {
             field = value
-            invalidate()
+            _textSize = value
+            textTv.textSize = value
         }
 
     init {
@@ -116,8 +126,8 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         _title = typedArray.getString(R.styleable.Accordion_title) ?: _title
         _text = typedArray.getString(R.styleable.Accordion_text) ?: _text
 
-        titleSize = typedArray.getDimension(R.styleable.Accordion_titleSize, titleSize)
-        textSize = typedArray.getDimension(R.styleable.Accordion_textSize, textSize)
+        _titleSize = typedArray.getDimension(R.styleable.Accordion_titleSize, _titleSize)
+        _textSize = typedArray.getDimension(R.styleable.Accordion_textSize, _textSize)
 
         _titleColor = typedArray.getColor(R.styleable.Accordion_titleColor, _titleColor)
         _textColor = typedArray.getColor(R.styleable.Accordion_textColor, _textColor)
@@ -137,8 +147,8 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         icon.requestLayout()
 
         // set the styles of the values as passed
-        titleTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize)
-        textTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
+        titleTv.textSize = _titleSize
+        textTv.textSize =  _textSize
 
         titleTv.setTextColor(_titleColor)
         textTv.setTextColor(_textColor)
