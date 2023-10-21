@@ -26,6 +26,7 @@ package com.gouravkhunger.accolibdemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.gouravkhunger.accolib.widget.Accordion
 
 class MainActivity : AppCompatActivity() {
@@ -37,5 +38,8 @@ class MainActivity : AppCompatActivity() {
         val accordion: Accordion = findViewById(R.id.dynamic_accordion)
         accordion.title = "Dynamic"
         accordion.text = "This text is rendered dynamically."
+
+        accordion.titleColor = ContextCompat.getColor(this, android.R.color.holo_orange_dark)
+        accordion.textColor = ContextCompat.getColor(this, android.R.color.holo_blue_dark)
     }
 }

@@ -49,35 +49,51 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
     private val titleHolder: CardView
     private val textHolder: CardView
 
-    // title and text to be displayed in the accordion
+    // accordion properties
     private var _title = ""
     private var _text = ""
+    private var _titleColor = 0XFF000000.toInt()
+    private var _textColor = 0XFFaaaaaa.toInt()
 
-    var title = ""
+    var title = _title
         get() {
             return _title
         }
         set(value) {
             field = value
+            _title = value
             titleTv.text = value
         }
-    var text = ""
+
+    var text = _text
         get() {
             return _text
         }
         set(value) {
             field = value
+            _text = value
             textTv.text = value
         }
 
     // colors for title and text
-    private var titleColor = 0XFF000000.toInt()
-        set(@ColorInt colorInt) {
-            field = colorInt
+    var titleColor = _titleColor
+        get() {
+            return _titleColor
         }
-    private var textColor = 0XFF111111.toInt()
         set(@ColorInt colorInt) {
             field = colorInt
+            _titleColor = colorInt
+            titleTv.setTextColor(colorInt)
+        }
+
+    var textColor = _textColor
+        get() {
+            return _textColor
+        }
+        set(@ColorInt colorInt) {
+            field = colorInt
+            _textColor = colorInt
+            textTv.setTextColor(colorInt)
         }
 
     // size of title and text
@@ -86,6 +102,7 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
             field = value
             invalidate()
         }
+
     private var textSize = 10f
         set(value) {
             field = value
@@ -93,7 +110,6 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         }
 
     init {
-
         // get values from custom parameters passed in xml declaration of view
         val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.Accordion, 0, 0)
 
@@ -103,8 +119,8 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         titleSize = typedArray.getDimension(R.styleable.Accordion_titleSize, titleSize)
         textSize = typedArray.getDimension(R.styleable.Accordion_textSize, textSize)
 
-        titleColor = typedArray.getColor(R.styleable.Accordion_titleColor, titleColor)
-        textColor = typedArray.getColor(R.styleable.Accordion_textColor, textColor)
+        _titleColor = typedArray.getColor(R.styleable.Accordion_titleColor, _titleColor)
+        _textColor = typedArray.getColor(R.styleable.Accordion_textColor, _textColor)
 
         // recycle the values
         typedArray.recycle()
@@ -124,11 +140,11 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
         titleTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleSize)
         textTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
 
-        titleTv.setTextColor(titleColor)
-        textTv.setTextColor(textColor)
+        titleTv.setTextColor(_titleColor)
+        textTv.setTextColor(_textColor)
 
-        titleTv.text = title
-        textTv.text = text
+        titleTv.text = _title
+        textTv.text = _text
 
         titleHolder = findViewById(R.id.titleHolder)
         textHolder = findViewById(R.id.textHolder)
@@ -143,7 +159,6 @@ class Accordion(context: Context, attributeSet: AttributeSet) :
 
     // open/close the accordion on title press
     private fun handleAccordion() {
-
         // don't do anything if it has already been clicked
         // -> prevents messing up with multiple clicks before
         // animation ends
