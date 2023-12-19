@@ -31,7 +31,7 @@ allprojects {
 Add the dependency
 ```Groovy
 dependencies {
-    implementation 'com.github.gouravkhunger:AccoLib:1.1.1'
+    implementation 'com.github.gouravkhunger:AccoLib:1.1.2'
 }
 ```
 
